@@ -30,6 +30,9 @@ function App() {
       }
     }
     filterHandler();
+    const saveLocalTodos = () => { 
+      localStorage.setItem('todos', JSON.stringify(todos));
+      }
     saveLocalTodos();
   }, [todos, status]);
 
@@ -41,9 +44,7 @@ function App() {
   //     localStorage.setItem('todos', JSON.stringify(todos));
   //   }
   // }
-    const saveLocalTodos = () => { 
-    localStorage.setItem('todos', JSON.stringify(todos));
-}
+
 
   const getLocalTodos = () => {
     if (localStorage.getItem('todos') === null) {
@@ -58,7 +59,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Marcus's ToDo List </h1>
+        <h1>ToDo List </h1>
       </header>
       <Form
         todos={todos}
